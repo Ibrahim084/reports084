@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Tajawal', system-ui, -apple-system, sans-serif;
+    --font-sans: 'IBM Plex Sans Arabic', 'Tajawal', system-ui, -apple-system, sans-serif;
+    --bg-cream: #FAF8F5;
+    --surface-card: #FFFFFF;
+  }
+
+  html {
+    direction: rtl;
+    font-family: var(--font-sans);
+    background-color: var(--bg-cream);
+    color: #1C1917;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Support for foldable screens (narrow cover screens & unfolded inner displays) */
+@media (max-width: 340px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 580px) and (max-width: 860px) {
+  .foldable-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
